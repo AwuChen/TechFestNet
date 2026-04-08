@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/TechFestNet/precache-manifest.147fd9b0add6766c4e2c2de998be552b.js"
+  "/TechFestNet/precache-manifest.2f38f22c3d5220e378c8f8b1ac17c0e0.js"
 );
 
 self.addEventListener('message', (event) => {

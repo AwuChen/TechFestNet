@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/TechFestNet/static/css/main.ead59979.chunk.css",
-    "main.js": "/TechFestNet/static/js/main.16180284.chunk.js",
-    "main.js.map": "/TechFestNet/static/js/main.16180284.chunk.js.map",
+    "main.js": "/TechFestNet/static/js/main.422e3e3a.chunk.js",
+    "main.js.map": "/TechFestNet/static/js/main.422e3e3a.chunk.js.map",
     "runtime-main.js": "/TechFestNet/static/js/runtime-main.24ae53c3.js",
     "runtime-main.js.map": "/TechFestNet/static/js/runtime-main.24ae53c3.js.map",
-    "static/js/2.58140313.chunk.js": "/TechFestNet/static/js/2.58140313.chunk.js",
-    "static/js/2.58140313.chunk.js.map": "/TechFestNet/static/js/2.58140313.chunk.js.map",
+    "static/js/2.5cb46696.chunk.js": "/TechFestNet/static/js/2.5cb46696.chunk.js",
+    "static/js/2.5cb46696.chunk.js.map": "/TechFestNet/static/js/2.5cb46696.chunk.js.map",
     "index.html": "/TechFestNet/index.html",
-    "precache-manifest.147fd9b0add6766c4e2c2de998be552b.js": "/TechFestNet/precache-manifest.147fd9b0add6766c4e2c2de998be552b.js",
+    "precache-manifest.2f38f22c3d5220e378c8f8b1ac17c0e0.js": "/TechFestNet/precache-manifest.2f38f22c3d5220e378c8f8b1ac17c0e0.js",
     "service-worker.js": "/TechFestNet/service-worker.js",
     "static/css/main.ead59979.chunk.css.map": "/TechFestNet/static/css/main.ead59979.chunk.css.map",
-    "static/js/2.58140313.chunk.js.LICENSE.txt": "/TechFestNet/static/js/2.58140313.chunk.js.LICENSE.txt"
+    "static/js/2.5cb46696.chunk.js.LICENSE.txt": "/TechFestNet/static/js/2.5cb46696.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.24ae53c3.js",
-    "static/js/2.58140313.chunk.js",
+    "static/js/2.5cb46696.chunk.js",
     "static/css/main.ead59979.chunk.css",
-    "static/js/main.16180284.chunk.js"
+    "static/js/main.422e3e3a.chunk.js"
   ]
 }
