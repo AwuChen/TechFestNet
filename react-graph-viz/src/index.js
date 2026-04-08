@@ -5,11 +5,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as neo4j from  'neo4j-driver';
 
+// TechFestNet Aura — override with REACT_APP_NEO4J_URI in .env if needed.
 const driver = neo4j.driver(
-  process.env.NEO4J_URI || 'neo4j+s://23f1f8d0.databases.neo4j.io',
+  process.env.REACT_APP_NEO4J_URI || process.env.NEO4J_URI || 'neo4j+s://c9b42b11.databases.neo4j.io',
   neo4j.auth.basic(
-    process.env.NEO4J_USER || 'neo4j',
-    process.env.NEO4J_PASSWORD || 'xQ3FQK4HZq5o-lbJJD5yHrTSdJQiejLW3iiejdoGs_E'
+    process.env.REACT_APP_NEO4J_USER || process.env.NEO4J_USER || 'neo4j',
+    process.env.REACT_APP_NEO4J_PASSWORD || process.env.NEO4J_PASSWORD || 'dO3ucmPE8r6Iosz5A4bhVNSd0emZkwxsQ_8n6Galx2k'
   ),
   {
     //encrypted: process.env.NEO4J_ENCRYPTED ? 'ENCRYPTION_ON' : 'ENCRYPTION_OFF',

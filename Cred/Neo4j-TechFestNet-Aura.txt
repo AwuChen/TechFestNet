@@ -1,0 +1,9 @@
+# Neo4j Aura (TechFestNet) — https://console.neo4j.io
+AURA_INSTANCEID=c9b42b11
+NEO4J_URI=neo4j+s://c9b42b11.databases.neo4j.io
+NEO4J_USERNAME=neo4j
+NEO4J_PASSWORD=dO3ucmPE8r6Iosz5A4bhVNSd0emZkwxsQ_8n6Galx2k
+NEO4J_DATABASE=neo4j
+
+# HTTP Query API (v2) — for external tools; the React app uses the Bolt driver above.
+NEO4J_QUERY_API_URL=https://c9b42b11.databases.neo4j.io/db/c9b42b11/query/v2
