@@ -4,6 +4,9 @@ import './App.css';
 import ForceGraph2D from 'react-force-graph-2d';
 import * as d3 from 'd3';
 import migrateTimestamps from './migrateTimestamps';
+import { getNeo4jConfig } from './neo4jConfig';
+
+const neo4jDb = () => getNeo4jConfig().database;
 
 class CypherViz extends React.Component {
   constructor({ driver }) {
@@ -394,7 +397,7 @@ class CypherViz extends React.Component {
 
   loadData = async (newNodeName = null, queryOverride = null) => {
 
-    let session = this.driver.session({ database: "neo4j" });
+    let session = this.driver.session({ database: neo4jDb() });
     let res;
     
     // Determine which query to use
@@ -1033,7 +1036,7 @@ class CypherViz extends React.Component {
       this.pendingNFCNode = null;
     }
 
-    let session = this.driver.session({ database: "neo4j" });
+    let session = this.driver.session({ database: neo4jDb() });
     try {
       const timestamp = Date.now();
 
@@ -1195,7 +1198,7 @@ class CypherViz extends React.Component {
   loadTimelineData = async (date) => {
     if (!this.driver) return;
 
-    const session = this.driver.session();
+    const session = this.driver.session({ database: neo4jDb() });
     try {
       const timestamp = date.getTime();
       
@@ -1291,7 +1294,7 @@ class CypherViz extends React.Component {
   getTimelineStats = async () => {
     if (!this.driver) return null;
 
-    const session = this.driver.session();
+    const session = this.driver.session({ database: neo4jDb() });
     try {
       // Get the earliest and latest timestamps, prioritizing relationships for start time
       const result = await session.run(
@@ -1973,7 +1976,7 @@ const ResetPhone = () => {
                 const nodeName = isNodeReportRequest;
                 console.log("Generating node report for:", nodeName);
                 
-                const session = driver.session({ database: "neo4j" });
+                const session = driver.session({ database: neo4jDb() });
                 
                 // Query for the specific node and its connections
                 const nodeQuery = `
@@ -2044,7 +2047,7 @@ const ResetPhone = () => {
             } else if (isReportRequest) {
               // For general report requests, execute the query and generate a comprehensive report
               try {
-                const session = driver.session({ database: "neo4j" });
+                const session = driver.session({ database: neo4jDb() });
                 const result = await session.run(generatedQuery);
                 await session.close();
 
@@ -2066,7 +2069,7 @@ const ResetPhone = () => {
             } else if (isTrueAnalyticalQuestion) {
               // For analytical questions, execute the query and provide a text answer
               try {
-                const session = driver.session({ database: "neo4j" });
+                const session = driver.session({ database: neo4jDb() });
                 const result = await session.run(generatedQuery);
                 await session.close();
 
@@ -2220,7 +2223,7 @@ const ResetPhone = () => {
             return;
           }
 
-          const session = driver.session();
+          const session = driver.session({ database: neo4jDb() });
           try {
             // First, check if a node with the new name already exists
             const existingNodeCheck = await session.run(
@@ -2315,7 +2318,7 @@ const ResetPhone = () => {
             return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
           };
 
-          const session = driver.session();
+          const session = driver.session({ database: neo4jDb() });
           try {
             await session.run(
               `MATCH (u:User {name: $oldName}) 

@@ -1,8 +1,11 @@
+import { getNeo4jConfig } from './neo4jConfig';
+
 // Migration script to add timestamps to existing data
 // Run this once to add createdAt properties to existing nodes and relationships
 
 const migrateTimestamps = async (driver) => {
-  const session = driver.session();
+  const { database } = getNeo4jConfig();
+  const session = driver.session({ database });
   try {
     console.log('Starting timestamp migration...');
     
